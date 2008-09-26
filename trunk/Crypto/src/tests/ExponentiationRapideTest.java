@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 import junit.framework.TestCase;
+import logger.CryptoLogger;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -22,26 +23,25 @@ import utils.ExponentiationRapide;
 public class ExponentiationRapideTest extends TestCase {
 
 	/** Le logger. */
-	private final static Logger logger = Logger.getRootLogger();
+	private static Logger logger;
 	
 	/**
 	 * Teste la méthode <code>getResultat</code>.
 	 */
 	@Test
 	public void testGetResultat() {
+		logger = CryptoLogger.getInstance(this.getClass().getName());
 		BigInteger exposant;
 		exposant = new BigInteger(3, new Random());
 		assertNotNull("L'exposant n'est pas créé", exposant);
 		BigInteger nombre;
 		nombre = new BigInteger(2, new Random());
 		assertNotNull("L'exposant n'est pas créé", exposant);
-		ExponentiationRapide expoRapide;
-		expoRapide = new ExponentiationRapide();
 		BigInteger resultat;
-		resultat = expoRapide.getResultat(exposant, nombre);
-		logger.debug(exposant);
-		logger.debug(nombre);
-		logger.debug(resultat);
+		resultat = ExponentiationRapide.getResultat(exposant, nombre);
+		logger.debug("exposant : " + exposant);
+		logger.debug("nombre : " + nombre);
+		logger.debug("resultat : " + resultat);
 	}
 
 }
