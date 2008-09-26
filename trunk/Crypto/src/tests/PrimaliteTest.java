@@ -1,7 +1,6 @@
 package tests;
 
 import java.math.BigInteger;
-import java.util.Random;
 
 import junit.framework.TestCase;
 import logger.CryptoLogger;
@@ -9,7 +8,6 @@ import logger.CryptoLogger;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import utils.ExponentiationRapide;
 import utils.Primalite;
 
 /**

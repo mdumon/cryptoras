@@ -41,10 +41,8 @@ public class ExponentiationModulaireTest extends TestCase {
 		BigInteger modulo;
 		modulo = new BigInteger(4096, new Random());
 		assertNotNull("Le modulo n'est pas créé", modulo);
-		ExponentiationModulaire expoModulaire;
-		expoModulaire = new ExponentiationModulaire();
 		BigInteger resultat;
-		resultat = expoModulaire.getResultat(exposant, nombre, modulo);
+		resultat = ExponentiationModulaire.getResultat(exposant, nombre, modulo);
 		logger.debug("exposant : " + exposant);
 		logger.debug("nombre : " + nombre);
 		logger.debug("modulo : " + modulo);
