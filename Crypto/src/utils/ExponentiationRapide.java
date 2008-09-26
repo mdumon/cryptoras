@@ -22,7 +22,7 @@ public class ExponentiationRapide {
 	 * 
 	 * @return le resultat
 	 */
-	public BigInteger getResultat(final BigInteger exposant, final BigInteger nombre) {
+	public static BigInteger getResultat(final BigInteger exposant, final BigInteger nombre) {
 		BigInteger resultat;
 		resultat = BigInteger.ONE;
 		for (int i = exposant.bitLength() - 1; i >= 0; i--) {

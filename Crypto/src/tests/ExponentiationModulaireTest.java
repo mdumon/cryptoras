@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 import junit.framework.TestCase;
+import logger.CryptoLogger;
 
 import org.apache.log4j.Logger;
 
@@ -23,13 +24,14 @@ import utils.ExponentiationModulaire;
 public class ExponentiationModulaireTest extends TestCase {
 
 	/** Le logger. */
-	private final static Logger logger = Logger.getRootLogger();
+	private static Logger logger;
 	
 	/**
 	 * Teste la méthode <code>getResultat</code>.
 	 */
 	@Test
 	public void testGetResultat() {
+		logger = CryptoLogger.getInstance(this.getClass().getName());
 		BigInteger exposant;
 		exposant = new BigInteger(4096, new Random());
 		assertNotNull("L'exposant n'est pas créé", exposant);
@@ -43,9 +45,9 @@ public class ExponentiationModulaireTest extends TestCase {
 		expoModulaire = new ExponentiationModulaire();
 		BigInteger resultat;
 		resultat = expoModulaire.getResultat(exposant, nombre, modulo);
-		logger.debug(exposant);
-		logger.debug(nombre);
-		logger.debug(modulo);
-		logger.debug(resultat);
+		logger.debug("exposant : " + exposant);
+		logger.debug("nombre : " + nombre);
+		logger.debug("modulo : " + modulo);
+		logger.debug("resultat : " + resultat);
 	}
 }
