@@ -1,13 +1,11 @@
 package tests;
 
 import java.math.BigInteger;
-import java.util.Random;
 
 import junit.framework.TestCase;
 import logger.CryptoLogger;
 
 import org.apache.log4j.Logger;
-
 import org.junit.Test;
 
 import utils.ExponentiationModulaire;
@@ -17,7 +15,7 @@ import utils.ExponentiationModulaire;
  * la classe <code>ExponentiationModulaire</code>.
  * 
  * @author MAXIME DUMON
- * @version 0.1 24/09/08
+ * @version 0.2 24/09/08
  * @since JDK 1.6
  * @see <code>ExponentiationModulaire</code>
  */
@@ -33,13 +31,13 @@ public class ExponentiationModulaireTest extends TestCase {
 	public void testGetResultat() {
 		logger = CryptoLogger.getInstance(this.getClass().getName());
 		BigInteger exposant;
-		exposant = new BigInteger(4096, new Random());
+		exposant = new BigInteger("3");
 		assertNotNull("L'exposant n'est pas créé", exposant);
 		BigInteger nombre;
-		nombre = new BigInteger(200, new Random());
+		nombre = new BigInteger("4");
 		assertNotNull("Le nombre à tester n'est pas créé", nombre);
 		BigInteger modulo;
-		modulo = new BigInteger(4096, new Random());
+		modulo = new BigInteger("7");
 		assertNotNull("Le modulo n'est pas créé", modulo);
 		BigInteger resultat;
 		resultat = ExponentiationModulaire.getResultat(exposant, nombre, modulo);
