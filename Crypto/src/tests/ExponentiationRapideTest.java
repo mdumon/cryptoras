@@ -13,20 +13,20 @@ import utils.ExponentiationRapide;
 
 /**
  * La classe ExponentiationRapideTest. Permet de tester
- * la classe <code>ExponentiationRapide</code>.
+ * la classe <code>ExponentiationRapide</code>
  * 
  * @author MAXIME DUMON
- * @version 0.1 24/09/08
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  * @see <code>ExponentiationRapide</code>
  */
 public class ExponentiationRapideTest extends TestCase {
 
-	/** Le logger. */
+	/** Le logger */
 	private static Logger logger;
 	
 	/**
-	 * Teste la méthode <code>getResultat</code>.
+	 * Teste la méthode <code>getResultat</code>
 	 */
 	@Test
 	public void testGetResultat() {
@@ -43,5 +43,4 @@ public class ExponentiationRapideTest extends TestCase {
 		logger.debug("nombre : " + nombre);
 		logger.debug("resultat : " + resultat);
 	}
-
 }

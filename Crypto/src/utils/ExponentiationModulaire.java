@@ -5,20 +5,20 @@ import java.math.BigInteger;
 /**
  * La classe ExponentiationModulaire. Propose une méthode statique
  * permettant de faire une exponentiation modulaire. Utile pour les tests
- * de primalité de grands entiers.
+ * de primalité de grands entiers
  * 
- * @author MAXIME DUMON
- * @version 0.1 24/09/08
+ * @author MAXIME DUMON, ROMAIN MACUREAU
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  * @see <code>Primalite</code>
  */
 public class ExponentiationModulaire {
 
 	/**
-	 * Calcul le résultat.
+	 * Méthode getResultat. Calcul le résultat
 	 * 
 	 * @param exposant l'exposant
-	 * @param nombre the nombre à élever
+	 * @param nombre le nombre à élever
 	 * @param modulo le modulo du calcul
 	 * 
 	 * @return le resultat

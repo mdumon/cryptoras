@@ -12,20 +12,20 @@ import utils.ExponentiationModulaire;
 
 /**
  * La classe ExponentiationModulaireTest. Permet de tester
- * la classe <code>ExponentiationModulaire</code>.
+ * la classe <code>ExponentiationModulaire</code>
  * 
- * @author MAXIME DUMON
- * @version 0.2 24/09/08
+ * @author MAXIME DUMON, ROMAIN MACUREAU
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  * @see <code>ExponentiationModulaire</code>
  */
 public class ExponentiationModulaireTest extends TestCase {
 
-	/** Le logger. */
+	/** Le logger */
 	private static Logger logger;
 	
 	/**
-	 * Teste la méthode <code>getResultat</code>.
+	 * Teste la méthode <code>getResultat</code>
 	 */
 	@Test
 	public void testGetResultat() {

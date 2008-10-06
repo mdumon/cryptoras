@@ -24,11 +24,11 @@ public class BigRandomTest {
 	@Test
 	public void testNextBigIntBigInteger() {
 		Logger logger = CryptoLogger.getInstance(this.getClass().getName());
-		BigInteger rand = BigRandom.nextBigInt(27,true);
+		BigInteger rand = BigRandom.nextBigInt(1024,true);
 		logger.debug("bigRand : "+rand);
 		logger.debug("rand length = "+rand.bitLength());
 		
-		BigInteger rand2 = BigRandom.nextBigInt(27,false);
+		BigInteger rand2 = BigRandom.nextBigInt(1024,false);
 		logger.debug("bigRand2 : "+rand2);
 		logger.debug("rand2 length = "+rand2.bitLength());
 	}

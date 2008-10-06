@@ -5,17 +5,17 @@ import java.math.BigInteger;
 /**
  * La classe ExponentiationRapide. Propose une méthode
  * statique pour calculer une exponentiation rapide.
- * Utile pour les tests de primalité de grands entiers.
+ * Utile pour les tests de primalité de grands entiers
  * 
- * @author MAXIME DUMON
- * @version 0.1 24/09/08
+ * @author MAXIME DUMON, ROMAIN MACUREAU
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  * @see <code>Primalite</code>
  */
 public class ExponentiationRapide {
 
 	/**
-	 * Calcul le résultat.
+	 * Méthode getResultat. Calcul le résultat
 	 * 
 	 * @param exposant l'exposant
 	 * @param nombre le nombre à élever
