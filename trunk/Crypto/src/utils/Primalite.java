@@ -3,21 +3,22 @@ import java.math.BigInteger;
 import java.util.Random;
 
 /**
- * The Class Primalite.
+ * La classe Primalite. Permet de tester si un nombre
+ * est premier et d'en générer aléatoirement
  * 
- * @author MAXIME DUMON
- * @version 0.3 24/09/08
+ * @author MAXIME DUMON, ROMAIN MACUREAU
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  * @see <code>ExponentiationRapide</code>, <code>ExponentiationModulaire</code>
  */
 public class Primalite {
 	
 	/**
-	 * Test si le nombre entierATester est premier.
+	 * Méthode isPremier. Test si le nombre N est premier
 	 * 
-	 * @param entierATester l'entier à tester
+	 * @param N le nombre N à tester
 	 * 
-	 * @return vrai si entierATester est premier, faux sinon
+	 * @return vrai si N est premier, faux sinon
 	 */
 	public static boolean isPremier(final BigInteger N) {
 		// Trouver k et m tels que N - 1 = ( 2^k ) * m ( N est l'entier à tester )
@@ -31,9 +32,7 @@ public class Primalite {
 
 		// Tirer aléatoirement un entier a tel que 1 <= a <= N - 1 ( N est l'entier à tester )
 		BigInteger a;
-		do {
-			a = new BigInteger(N.bitLength(), new Random());
-		} while (a.compareTo(temp) == 1);
+		a = new BigInteger(N.bitLength(), new Random());
 		
 		// Créer b tel que b = a^m mod N
 		BigInteger b;
@@ -46,21 +45,32 @@ public class Primalite {
 				if (b.compareTo(temp) == 0) {
 					return true;
 				} else {
-					b = b.multiply(b);
-					b = b.mod(N);
+					b = b.multiply(b).mod(N);
 				}
 			}
 			return false;
 		}
 	}
 	
+	/**
+	 * Méthode getPremier. Permet de générer
+	 * un nombre premier avec un nombre de bits fixe ou non.
+	 * 
+	 * @param nbBits le nombre de bits maximum du nombre à générer
+	 * @param nbBitsFixe vrai si le nombre de bits est fixe, faux sinon
+	 * 
+	 * @return entier le nombre premier généré
+	 */
 	public static BigInteger getPremier(int nbBits, boolean nbBitsFixe) {
 		BigInteger entier;
 		entier = null;
 		boolean isPremier;
 		isPremier = false;
+		
+		entier = BigRandom.nextBigInt(nbBits, nbBitsFixe);
+		entier = entier.setBit(0);
 		while(!isPremier) {
-			entier = BigRandom.nextBigInt(nbBits, nbBitsFixe);
+			entier = entier.add(new BigInteger("2"));
 			isPremier = Primalite.isPremier(entier);
 		}
 		return entier;

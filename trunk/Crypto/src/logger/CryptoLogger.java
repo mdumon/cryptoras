@@ -11,11 +11,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
- * The Class CryptoLogger. Permet l'instanciation unique
+ * La classe CryptoLogger. Permet l'instanciation unique
  * d'un logger.
  * 
  * @author MAXIME DUMON
- * @version 0.1 24/09/08
+ * @version 1.0 06/10/08
  * @since JDK 1.6
  */
 public class CryptoLogger {
@@ -27,11 +27,11 @@ public class CryptoLogger {
 	private static boolean initialize;
 	
 	/**
-	 * Retourne la seule instance d'un CryptoLogger.
+	 * Méthode getInstance. Retourne la seule instance du logger
 	 * 
 	 * @param className le nom de la classe
 	 * 
-	 * @return instance l'unique instance du CryptoLogger
+	 * @return instance l'unique instance du logger
 	 */
 	public static Logger getInstance(String className) {
 		if (!initialize) {
