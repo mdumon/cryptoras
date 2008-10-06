@@ -1,7 +1,6 @@
 package tests;
 
 import java.math.BigInteger;
-import java.util.Random;
 
 import junit.framework.TestCase;
 import logger.CryptoLogger;
@@ -32,21 +31,24 @@ public class PrimaliteTest extends TestCase {
 	public void testIsPremier() {
 		logger = CryptoLogger.getInstance(this.getClass().getName());
 		BigInteger N;
-		//N = new BigInteger("7");
-		//N = new BigInteger("130789230115889184784687160560183330862845320123630249361959922787096514371561069039536010388297549680036717397016729122705912051578191868140133406412253415776054381188624532347280935490459396955950093807767606447166194932353319423440935993781596351983977630807078712375116205416759372699722121728093163824717");
-		byte[] tableau;
-		tableau = new byte[1024];
-		
-		
-		new Random().nextBytes(tableau);
-			
-		N = new BigInteger(tableau);
-		logger.debug("N est sur : " + N.bitLength() + " bits");
+		N = new BigInteger("130789230115889184784687160560183330862845320123630249361959922787096514371561069039536010388297549680036717397016729122705912051578191868140133406412253415776054381188624532347280935490459396955950093807767606447166194932353319423440935993781596351983977630807078712375116205416759372699722121728093163824717");
 		assertNotNull("Le nombre à tester n'est pas créé", N);
 		boolean nIsPremier;
 		nIsPremier = false;
 		nIsPremier = Primalite.isPremier(N);
-		//logger.debug("N : " + N);
-		logger.debug("resultat : " + nIsPremier);
+		logger.debug(N + " est-il premier : " + nIsPremier);
+	}
+	
+	@Test
+	public void testGetPremier() {
+		logger = CryptoLogger.getInstance(this.getClass().getName());
+		BigInteger entier;
+		entier = Primalite.getPremier(10, true);
+		logger.debug("Entier premier : " + entier);
+		logger.debug("Nb bits : " + entier.bitLength());
+		boolean isPremier;
+		isPremier = Primalite.isPremier(entier);
+		logger.debug("Est-il premier ? : " + isPremier);
+		logger.debug("Nombre de bits : " + entier.bitLength());
 	}
 }

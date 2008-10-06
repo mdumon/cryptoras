@@ -2,6 +2,8 @@ package tests;
 
 import java.math.BigInteger;
 
+import logger.CryptoLogger;
+
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -22,7 +24,7 @@ import utils.Bezout;
 public class BezoutTest {
 	
 	/** Le logger */
-	private final static Logger logger = Logger.getRootLogger();
+	private final static Logger logger = CryptoLogger.getInstance(BezoutTest.class.getName());
 	
 	/**
 	 * Teste la méthode <code>calc</code>
@@ -31,7 +33,7 @@ public class BezoutTest {
 	public void testCalc() {
 		BigInteger a,b;
 
-		a = new BigInteger("23");
+		a = new BigInteger("27");
 		b = new BigInteger("15");
 
 		BezoutGCD res;
